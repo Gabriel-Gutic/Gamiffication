@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add question for would you rather</title>
+</head>
+<body>
+
+<div>
+    <p id = "title">Propose</p><br>
+<form action="" method="post" style="spacing:5px;">
+    {% csrf_token %}
+    {{ form }}
+    <p><br></p>
+    <input type="submit" value="Submit"><br>
+</form>
+    {% if next_id <= size %}
+    <a href="/{{next_id}}"><button>Back to "Would you rather"</button></a>
+    {% else %}
+    <a href="/1"><button>Back to "Would you rather"</button></a>
+    {% endif %}
+</div>
+</body>
+
+<style>
+
+body{
+}
+
+div {
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 10%;
+
+    width: 40%;
+    height: 360px;
+    border: 3px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#title{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+input, button{
+    width: 100%;
+}
+
+</style>
